@@ -1,11 +1,17 @@
-Waveform - CodeIgniter / PHP Input validator
+Waveform - PHP Input validator and generator
 ============================================
-Waveform is a form validation class for CodeIgniter and PHP.
+Waveform is a form validation and generation class for PHP.
 It can provide for form (or table or just field) HTML generation as well as validation rules.
 
 
 Updates
 =======
+
+1.4.0
+-----
+* Switch to [Composer](http://getcomposer.org) packaging system instead of Sparks.
+* Removed all CodeIgniter specific stuff
+* Added `$waveform->Style()` function to load styles from `styles/`
 
 1.3.0
 -----
@@ -32,8 +38,8 @@ Updates
 Installation
 ============
 
-Installing into CodeIgniter
----------------------------
+Installing into CodeIgniter / CakePHP etc.
+------------------------------------------
 Download this GIT repository and copy into your application directory.
 
 Alternatively, install with [Composer](http://getcomposer.org).
@@ -41,7 +47,7 @@ Alternatively, install with [Composer](http://getcomposer.org).
 
 Using Waveform in PHP
 ---------------------
-While Waveform is primarily CodeIgniter + Composer based it can also be used as a stand-alone.
+While Waveform is primarily MVC + Composer based it can also be used as a stand-alone.
 
 Grab the main waveform.php file from the libraries directory and simply dump it wherever it is needed.
 
@@ -54,7 +60,7 @@ Examples
 Simple signup page
 ------------------
 
-The below shows a simple user sign up page controller written for [CodeIgniter](http://codeigniter.com/) using [Sparks](http://getsparks.org/).
+The below shows a simple user sign up page controller written for [CodeIgniter](http://codeigniter.com/).
 
 	<?php
 	class User as CI_Controller {
