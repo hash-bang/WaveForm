@@ -276,7 +276,7 @@ class Waveform {
 	/**
 	* Return a field record
 	* @param string $field The field to return
-	* @return WaveFormField The field object found or FALSE if not found
+	* @return WaveformField The field object found or FALSE if not found
 	*/
 	function Field($field) {
 		return isset($this->_fields[$field]) ? $this->_fields[$field] : FALSE;
@@ -286,7 +286,7 @@ class Waveform {
 	* Alias of Field()
 	* @param string $field The field to return
 	* @see Field()
-	* @return WaveFormField The field object found or FALSE if not found
+	* @return WaveformField The field object found or FALSE if not found
 	*/
 	function Get($field) {
 		return $this->Field($field);
@@ -1578,7 +1578,7 @@ class WaveformField {
 	// Built-in validation methods {{{
 	/*
 	Each validator can have optional funciton prefixes.
-	For example lets assume 'Foo' is a test that is to be applied with '$WaveForm->Define('field')->Foo()
+	For example lets assume 'Foo' is a test that is to be applied with '$Waveform->Define('field')->Foo()
 	* If 'ApplyFoo(params...)' exists it is called when initalizing the test
 		- If this function returns FALSE the validator is not added to the validator stack and all subsequent stages are not applied
 	* If 'CheckFoo(params...)' exists then it is called to validate that test.
