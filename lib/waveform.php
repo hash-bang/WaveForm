@@ -520,7 +520,7 @@ class Waveform {
 	*/
 	function Style($style, $attribs = null, $value = null) {
 		if ($style && !$attribs) { // Load a style file
-			require(__DIR__ . '/' . basename($style) . '.php');
+			require(__DIR__ . '/../styles/' . basename($style) . '.php');
 		} else {
 			if (!isset($this->_style[$style])) // Never seen this style before - define a stub
 				$this->_style[$style] = array();
