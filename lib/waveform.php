@@ -502,7 +502,13 @@ class Waveform {
 	/**
 	* Set a global style type
 	* e.g.
+	*  Load a style file from styles/
+	*  $this->Waveform->Style('bootstrap');
+	*  
+	*  Set the table class (simple style)
 	*  $this->Waveform->Style('table', 'class', 'border table-big');
+	*
+	*  Set the table class using an array
 	*  $this->Waveform->Style('table', array('class' => 'border table-big'));
 	*
 	* Inteligence applied:
@@ -512,15 +518,19 @@ class Waveform {
 	* @param array|string $attribs Either an array of attributes to set or the name of the single attribute to use with $value
 	* @param string|int $value If $attribs is a single string value set that style element to this specified value
 	*/
-	function Style($style, $attribs, $value = null) {
-		if (!isset($this->_style[$style])) // Never seen this style before - define a stub
-			$this->_style[$style] = array();
-		if (is_array($attribs)) { // Multiple set array
-			if (!isset($attribs['TAG']) && isset($this->_style[$style]['TAG'])) // Dont let the new data overwrite the 'TAG' meta property
-				$attribs['TAG'] = $this->_style[$style]['TAG'];
-			$this->_style[$style] = $attribs;
-		} else { // Single set key => val
-			$this->_style[$style][$attribs] = $value;
+	function Style($style, $attribs = null, $value = null) {
+		if ($style && !$attribs) { // Load a style file
+			require(__DIR__ . '/' . basename($style) . '.php');
+		} else {
+			if (!isset($this->_style[$style])) // Never seen this style before - define a stub
+				$this->_style[$style] = array();
+			if (is_array($attribs)) { // Multiple set array
+				if (!isset($attribs['TAG']) && isset($this->_style[$style]['TAG'])) // Dont let the new data overwrite the 'TAG' meta property
+					$attribs['TAG'] = $this->_style[$style]['TAG'];
+				$this->_style[$style] = $attribs;
+			} else { // Single set key => val
+				$this->_style[$style][$attribs] = $value;
+			}
 		}
 	}
 

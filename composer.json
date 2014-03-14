@@ -2,7 +2,7 @@
 	"name": "hashbang/waveform",
 	"description": "PHP input validation make obscenely easy",
 	"keywords": ["forms", "validation"],
-	"homepage": "https://github.com/hash-bang/Spark-Waveform",
+	"homepage": "https://github.com/hash-bang/Waveform",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
