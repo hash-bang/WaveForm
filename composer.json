@@ -22,6 +22,6 @@
 	"config": {
 	},
 	"autoload": {
-		"files": ["lib/waveform.php"]
+		"files": ["waveform.php"]
 	}
 }
